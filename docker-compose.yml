@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  superset:
+    build: ./docker/superset
+    container_name: superset
+    restart: always
+    ports:
+      - "8088:8088"
+    environment:
+      - SUPERSET_SECRET_KEY=your_secret_key_here
+      - SQLALCHEMY_DATABASE_URI=postgresql://superset:superset@superset-db:5432/superset
+    depends_on:
+      - superset-db
+    volumes:
+      - superset_home:/app/superset_home
+
+  superset-db:
+    image: postgres:15
+    container_name: superset-db
+    restart: always
+    environment:
+      POSTGRES_USER: superset
+      POSTGRES_PASSWORD: superset
+      POSTGRES_DB: superset
+    volumes:
+      - superset_db_data:/var/lib/postgresql/data
+
+volumes:
+  superset_home:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/berserk/dev/tools/superset
+  superset_db_data:
