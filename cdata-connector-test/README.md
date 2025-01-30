@@ -86,11 +86,3 @@ pip install -r requirements.txt
 - Modify the `install-license.sh` script to use system Java.
 
 ---
-
----
-.
-
-**Author:** Anthony Tleiji
-
-**Date:** Jan 30 2025
-

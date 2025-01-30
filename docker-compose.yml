@@ -2,13 +2,13 @@ version: "3.8"
 
 services:
   superset:
-    build: ./docker/superset
+    build: ./docker/superset-cdata-support
     container_name: superset
     restart: always
     ports:
       - "8088:8088"
     environment:
-      - SUPERSET_SECRET_KEY=your_secret_key_here
+      - SUPERSET_SECRET_KEY=superset
       - SQLALCHEMY_DATABASE_URI=postgresql://superset:superset@superset-db:5432/superset
     depends_on:
       - superset-db
