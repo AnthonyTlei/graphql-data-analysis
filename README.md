@@ -10,7 +10,7 @@ We explore multiple approaches to achieve this:
 
 ## 🚀 Available Methods
 
-### **1️⃣ CData Python Connector**
+### **1️ CData Python Connector**
 Use the **CData Python Connector** to interact with GraphQL endpoints in a Python environment. This approach allows you to:
 - Query GraphQL APIs using SQLAlchemy.
 - Store and analyze the results in Pandas DataFrames.
@@ -20,7 +20,7 @@ Use the **CData Python Connector** to interact with GraphQL endpoints in a Pytho
 
 ---
 
-### **2️⃣ Apache Superset + CData**
+### **2️ Apache Superset + CData**
 Integrate **CData GraphQL Connector** with **Apache Superset**, allowing GraphQL queries to be executed directly inside Superset’s SQL Lab. This method provides:
 - A GUI-based interface for querying GraphQL APIs.
 - Dashboard creation and data visualization.
@@ -30,10 +30,17 @@ Integrate **CData GraphQL Connector** with **Apache Superset**, allowing GraphQL
 
 ---
 
-### **3️⃣ Standalone Superset (For General Use)**
+### **3️ Standalone Superset (For General Use)**
 If you want to use **Apache Superset without CData**, you can set it up as a standalone tool for traditional SQL-based analytics.
 
 📖 **Read more:** [Superset Standalone Guide](docker/superset/README.md)
+
+---
+
+### **4 Intermediate Database - sqlite in python**
+This is a short test that leverages introspection and the graphql's endpoint metadata to dynamically flatten & store the response in an intermediate sqlite database which can then be queried. 
+
+📖 **Read more:** [Intermediate Database - sqlite](sqllite-graphql-test/README.md)
 
 ---
 
